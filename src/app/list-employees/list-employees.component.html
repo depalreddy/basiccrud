@@ -1,0 +1,30 @@
+<h3>employee List..</h3>
+<!-- <router-outlet></router-outlet> -->
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">NAME</th>
+      <th scope="col">EMAIL</th>
+      <th scope="col">GENDER</th>
+      <th scope="col">DOB</th>
+      <th scope="col">DEPT</th>
+      <th scope="col">STATUS</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let employee of employees">
+      <td>{{ employee.id }}</td>
+      <td>{{ employee.name }}</td>
+      <td>{{ employee.email }}</td>
+      <td>{{ employee.gender }}</td>
+      <td>{{ employee.dob }}</td>
+      <td>{{ employee.dept }}</td>
+      <td class="mar-right">
+      <a mat-stroked-button color="primary" [routerLink]="['view', employee.id]" title="view">View</a>&nbsp;
+      <a mat-stroked-button color="accent" [routerLink]="['edit', employee.id]" title="Edit">Edit</a>&nbsp;
+      <a mat-stroked-button color="warn" title="Delete">Delete</a>
+    </td>
+    </tr>
+  </tbody>
+</table>
